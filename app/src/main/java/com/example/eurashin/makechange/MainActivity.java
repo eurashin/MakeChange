@@ -11,6 +11,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
 
+/*
+* TODO: -make details page for partners -make configuration pages
+* */
+
 public class MainActivity extends AppCompatActivity {
     private ListView drawerList;
     private DrawerLayout mDrawerLayout;
