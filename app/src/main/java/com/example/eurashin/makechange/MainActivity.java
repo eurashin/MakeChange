@@ -11,6 +11,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
 
+/*
+* TODO: -make details page for partners -make configuration pages
+* */
+
 public class MainActivity extends AppCompatActivity {
     private ListView drawerList;
     private DrawerLayout mDrawerLayout;
@@ -86,11 +90,6 @@ public class MainActivity extends AppCompatActivity {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, fragment)
                     .commit();
-
-            // Highlight the selected item, update the title, and close the drawer
-            //      mDrawerList.setItemChecked(position, true);
-            //     setTitle(mPlanetTitles[position]);
-            //    mDrawerLayout.closeDrawer(mDrawerList);
         }
 
     }

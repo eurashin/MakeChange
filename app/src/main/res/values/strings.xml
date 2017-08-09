@@ -2,4 +2,27 @@
     <string name="app_name">Make Change</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="pick_nonprofit">Support</string>
+    <string name="search_hint">Search a nonprofit</string>
+    <string name="new_account">New Account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="next">Next</string>
+    <string name="motto">The app that makes a difference.</string>
+    <string name="choose_nonprofits_prompt">Choose up to 5 nonprofits you care about!</string>
+    <string name="plus">+</string>
+
+
+    <!--Register user page-->
+    <string name="user_name_prompt">Username</string>
+    <string name="password_prompt">Password</string>
+    <string name="confirm_password_prompt">Confirm Password</string>
+
+    <!--connect card page-->
+    <string name="connect_card_title">Connect your card</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="card_num">Card #</string>
+    <string name="exp_date">Exp. Date</string>
+    <string name="cvv">CVV</string>
+
 </resources>

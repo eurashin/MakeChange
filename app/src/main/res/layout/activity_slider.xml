@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--TODO: give border to main 5 linear layout elements-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_slider"
@@ -22,20 +23,36 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:weightSum="1">
-            <Button
+            android:weightSum="1"
+            android:background="@drawable/border"
+            android:layout_margin="1dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.3"
-                android:id="@+id/button1"
-                android:padding="0dp"
-                style="@style/Widget.AppCompat.Button.Borderless" />
+                android:layout_weight="0.4"
+                android:id="@+id/buttonRow1">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/button1"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:id="@+id/deleteButton1"
+                    android:src="@null"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/sliderBox1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:layout_weight="0.7">
+                android:layout_weight="0.6">
             </LinearLayout>
 
         </LinearLayout>
@@ -45,20 +62,36 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:weightSum="1">
-            <Button
+            android:weightSum="1"
+            android:background="@drawable/border"
+            android:layout_margin="1dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.3"
-                android:id="@+id/button2"
-                android:padding="0dp"
-                style="@style/Widget.AppCompat.Button.Borderless"/>
+                android:layout_weight="0.4"
+                android:id="@+id/buttonRow2">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/button2"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:id="@+id/deleteButton2"
+                    android:src="@drawable/transparent"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/sliderBox2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:layout_weight="0.7">
+                android:layout_weight="0.6">
             </LinearLayout>
         </LinearLayout>
 
@@ -67,20 +100,36 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:weightSum="1">
-            <Button
+            android:weightSum="1"
+            android:background="@drawable/border"
+            android:layout_margin="1dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.3"
-                android:id="@+id/button3"
-                android:padding="0dp"
-                style="@style/Widget.AppCompat.Button.Borderless"/>
+                android:layout_weight="0.4"
+                android:id="@+id/buttonRow3">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/button3"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:id="@+id/deleteButton3"
+                    android:src="@drawable/transparent"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/sliderBox3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:layout_weight="0.7">
+                android:layout_weight="0.6">
             </LinearLayout>
         </LinearLayout>
 
@@ -89,20 +138,35 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:weightSum="1">
-            <Button
+            android:weightSum="1"
+            android:background="@drawable/border"
+            android:layout_margin="1dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.3"
-                android:id="@+id/button4"
-                android:padding="0dp"
-                style="@style/Widget.AppCompat.Button.Borderless"/>
-            <LinearLayout
+                android:layout_weight="0.4"
+                android:id="@+id/buttonRow4">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/button4"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:id="@+id/deleteButton4"
+                    android:src="@drawable/transparent"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>            <LinearLayout
                 android:id="@+id/sliderBox4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:layout_weight="0.7">
+                android:layout_weight="0.6">
             </LinearLayout>
         </LinearLayout>
 
@@ -111,20 +175,36 @@
             android:layout_height="0dp"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:weightSum="1">
-            <Button
+            android:weightSum="1"
+            android:background="@drawable/border"
+            android:layout_margin="1dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.3"
-                android:id="@+id/button5"
-                android:padding="0dp"
-                style="@style/Widget.AppCompat.Button.Borderless"/>
+                android:layout_weight="0.4"
+                android:id="@+id/buttonRow5">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/button5"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:id="@+id/deleteButton5"
+                    android:src="@drawable/transparent"
+                    android:padding="0dp"
+                    style="@style/Widget.AppCompat.Button.Borderless" />
+            </LinearLayout>
             <LinearLayout
                 android:id="@+id/sliderBox5"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:layout_weight="0.7">
+                android:layout_weight="0.6">
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
