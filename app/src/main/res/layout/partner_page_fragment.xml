@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        style="@style/TextAppearance.AppCompat.Display1"
+        android:textAlignment="center"
+        android:id="@+id/partner_page_name"
+        android:text="Nonprofit Name"
+        />
+    <!--picture bar-->
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!--description-->
+    <TextView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:id="@+id/partner_page_summary"
+        android:text="This is a nonprofit that does this and this and this. I am really excited to be part of Make Change whoooohooo."></TextView>
+
+    <!--care about...-->
+    <ListView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"></ListView>
+
+    <!--social media bar-->
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:src="@drawable/facebook"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="0dp"
+                android:text="Facebook Name"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:src="@drawable/instagram"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="0dp"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:text="instagram handle"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:src="@drawable/twitter"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:text="twitter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

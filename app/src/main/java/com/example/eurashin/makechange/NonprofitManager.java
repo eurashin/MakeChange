@@ -42,6 +42,15 @@ public class NonprofitManager {
         }
     }
 
+    public void delete(int index) {
+        //shift everything back one
+        for(int i=index+1; i<size; i++) {
+            nonprofits[i-1] = nonprofits[i];
+        }
+        //delete last
+        size--;
+    }
+
     //replaces nonprofit with another nonprofit, keeping same percent
     public void insert(Nonprofit nonprofit, int index) {
         boolean shouldAdd = true;
@@ -82,5 +91,4 @@ public class NonprofitManager {
         }
         return percents;
     }
-
 }

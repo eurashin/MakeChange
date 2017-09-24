@@ -28,11 +28,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //set as slider fragment for now
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, new SliderFragment())
+                .commit();
+
+
         //create the drawer
         drawerList = (ListView)findViewById(R.id.navList);
         items = new ArrayList<MenuItem>();
-        items.add(new MenuItem("Main"));
-        items.add(new MenuItem("Next"));
+        items.add(new MenuItem("Support"));
+      //  items.add(new MenuItem("Discover"));
+        items.add(new MenuItem("Profile"));
+        items.add(new MenuItem("Settings"));
         adapter = new MenuItemAdapter(this, items);
         drawerList.setAdapter(adapter);
 
@@ -45,18 +54,27 @@ public class MainActivity extends AppCompatActivity {
             /** Swaps fragments in the main content view */
             private void selectItem(int position) {
                 Fragment fragment;
+                FragmentManager fragmentManager = getFragmentManager();
+                String tag;
                 //switch statement to choose appropriate fragment
                 switch(position) {
                     case 0: fragment = new SliderFragment();
+                        tag = "slider";
                         break;
-                    default: fragment = new SliderFragment();
+                    case 1: fragment = new PartnerDetailFragment();
+                        tag = "partner";
+                        break;
+                    case 2: fragment = new SettingsFragment();
+                        tag = "settings";
+                        break;
+                    default: fragment = new PartnerDetailFragment();
+                        tag = "partner";
                         break;
                 }
 
                 // Insert the fragment by replacing any existing fragment
-                FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.content_frame, fragment)
+                        .replace(R.id.content_frame, fragment, tag)
                         .commit();
 
                 // Highlight the selected item, update the title, and close the drawer
@@ -65,33 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 //    mDrawerLayout.closeDrawer(mDrawerList);
             }
         });
-    }
-
-
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
-        }
-
-        /** Swaps fragments in the main content view */
-        private void selectItem(int position) {
-            Fragment fragment;
-            //switch statement to choose appropriate fragment
-            switch(position) {
-                case 0: fragment = new SliderFragment();
-                    break;
-                default: fragment = new SliderFragment();
-                    break;
-            }
-
-            // Insert the fragment by replacing any existing fragment
-            FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.content_frame, fragment)
-                    .commit();
-        }
-
     }
 }
 

@@ -99,6 +99,12 @@ public class SliderFragment extends Fragment {
             //trash buttons
             //TODO: add trash button functionality (using nonprofit manager)
             trashButtons[index].setImageResource(R.drawable.trash_icon);
+            trashButtons[index].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    nonprofitManager.delete(index);
+                }
+            });
             //title
             buttons[index].setText(nonprofits.get(index).getName());
             //amount money
@@ -173,7 +179,7 @@ public class SliderFragment extends Fragment {
                     Fragment fragment = new PickNonprofitFragment();
                     fragment.setArguments(bundle);
                     fragmentManager.beginTransaction()
-                        .replace(R.id.content_frame, new PickNonprofitFragment())
+                        .replace(R.id.content_frame, fragment)
                         .addToBackStack(null)
                         .commit();
                 }
