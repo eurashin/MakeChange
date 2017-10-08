@@ -23,8 +23,9 @@ public class PickNonprofitFragment extends Fragment {
         return(inflater.inflate(R.layout.nonprofit_picker_fragment, container, false));
     }
 
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
 
         ArrayList<Partner> partners = new ArrayList<Partner>();
         partners.add(new Partner("Nonprofit 1", "image", "This is a nonprofit yayaya", "address", new ArrayList<String>()));

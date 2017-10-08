@@ -24,7 +24,7 @@ public class SettingsFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
 
         //set list of settings options
         ArrayList<String> options = new ArrayList<String>();
@@ -42,16 +42,17 @@ public class SettingsFragment extends Fragment {
 
                 switch(position) {
                     case 0:
-                        fragment = new CardUploadFragment();
+                        fragment = new CardManageFragment();
                         break;
                     default:
-                        fragment = new CardUploadFragment();
+                        fragment = new CardManageFragment();
                         break;
                 }
 
                 // Insert the fragment by replacing any existing fragment
                 fragmentManager.beginTransaction()
                         .replace(R.id.content_frame, fragment)
+                        .addToBackStack("card")
                         .commit();
             }
         });
