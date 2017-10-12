@@ -23,7 +23,7 @@ public class NonprofitStarterFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
 
         Button[] buttons = new Button[5];
         buttons[0] = (Button)getActivity().findViewById(R.id.startnonprofit1);

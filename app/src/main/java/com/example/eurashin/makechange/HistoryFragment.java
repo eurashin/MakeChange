@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by eurashin on 10/6/17.
+ * Created by eurashin on 10/11/17.
  */
 
-public class UserFragment extends Fragment {
+public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return(inflater.inflate(R.layout.nonprofit_picker_fragment, container, false));

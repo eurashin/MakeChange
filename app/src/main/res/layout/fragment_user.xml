@@ -7,10 +7,46 @@
         android:layout_height="0dp"
         android:layout_weight="0.1"
         android:text="name"
-        android:id="@+id/user_name"/>
+        android:id="@+id/user_name"
+        android:gravity="center"
+        style="@style/TextAppearance.AppCompat.Headline"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.3"></LinearLayout>
+        android:layout_weight="0.3">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <ListView
+            android:id="@+id/nonprofit_donated_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></ListView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:text="Total donated: "
+                android:gravity="bottom"
+                android:layout_marginLeft="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                style="@style/TextAppearance.AppCompat.Display4"
+                android:text="$20.76"
+                />
+    </LinearLayout>
 
 </LinearLayout>

@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<MenuItem> items;
     private MenuItemAdapter adapter;
-    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

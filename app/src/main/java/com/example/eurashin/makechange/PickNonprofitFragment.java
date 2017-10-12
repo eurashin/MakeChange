@@ -3,11 +3,14 @@ package com.example.eurashin.makechange;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
 
@@ -31,9 +34,25 @@ public class PickNonprofitFragment extends Fragment {
         partners.add(new Partner("Nonprofit 1", "image", "This is a nonprofit yayaya", "address", new ArrayList<String>()));
         partners.add(new Partner("Nonprofit 2", "image", "This is a nonprofit yayaya", "address", new ArrayList<String>()));
         PickNonprofitAdapter adapter = new PickNonprofitAdapter(getActivity(), partners);
-
         ListView listView = (ListView) getActivity().findViewById(R.id.nonprofitlist);
         listView.setAdapter(adapter);
+
+        EditText inputSearch = (EditText) getActivity().findViewById(R.id.input_search);
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         Button supportButton = (Button) getActivity().findViewById(R.id.support);
         supportButton.setOnClickListener(new View.OnClickListener() {
