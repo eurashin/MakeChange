@@ -91,4 +91,12 @@ public class NonprofitManager {
         }
         return percents;
     }
+
+    public int[] getPastPercentages() {
+        int [] percents = new int[size];
+        for(int i=0; i<size; i++) {
+            percents[i] = (int)Math.round(nonprofits[i].getOldPercent());
+        }
+        return percents;
+    }
 }

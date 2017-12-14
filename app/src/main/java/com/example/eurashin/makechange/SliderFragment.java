@@ -45,7 +45,7 @@ public class SliderFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
         //initialize arrays
         nonprofits = new ArrayList<Nonprofit>();
         seekBars = new SeekBar[MAX];
@@ -117,6 +117,7 @@ public class SliderFragment extends Fragment {
             seekBars[index] = new SeekBar(getActivity());
             seekBars[index].setProgress((int)Math.round(nonprofits.get(index).getPercentDonated()));
             seekBars[index].setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT,(float) 0.7));
+            seekBars[index].setEnabled(false);
             sliderBoxes[index].addView(seekBars[index]);
             //percent
             percentList[index] = new TextView(getActivity());
@@ -125,13 +126,12 @@ public class SliderFragment extends Fragment {
             percentList[index].setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT,(float) 0.15));
             sliderBoxes[index].addView(percentList[index]);
 
-            //TODO: make sure slider bars have max percentage
             //set listener for changes
             seekBars[index].setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                     //update percents
-                    nonprofitManager.changePercent(index, progress);
+                    nonprofitManager.changePercent(index, progress); //use nonprofit manager to get sliders to talk
                     moneyList[index].setText(String.format("$%.2f", nonprofits.get(index).getPercentDonated()/100 * totalDonated));
                     percentList[index].setText("%" + Integer.toString((int)Math.round(nonprofits.get(index).getPercentDonated())));
                     int [] percentValues = nonprofitManager.getNonprofitPercentages();
@@ -144,7 +144,6 @@ public class SliderFragment extends Fragment {
 
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
-
                 }
 
                 @Override
@@ -154,6 +153,80 @@ public class SliderFragment extends Fragment {
             });
 
         }
+
+        //TODO: make sure slider bars have max percentage
+        //only change silders if "set" button is pressed.
+        final Button setButton = (Button) getActivity().findViewById(R.id.set_button);
+
+        setButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int [] percentValues = nonprofitManager.getNonprofitPercentages();
+                //store old percents
+                for(int j = 0; j<nonprofitManager.size; j++) {
+                    nonprofits.get(j).setOldPercent(percentValues[j]);
+                }
+
+                for (int i = 0; i < nonprofitManager.size; i++) {
+                    seekBars[i].setEnabled(true);
+                }
+
+                Button cancelButton = (Button) getActivity().findViewById(R.id.cancel_button);
+                Button saveButton = (Button) getActivity().findViewById(R.id.save_button);
+
+                cancelButton.setVisibility(View.VISIBLE);
+                saveButton.setVisibility(View.VISIBLE);
+                setButton.setVisibility(View.GONE);
+            }
+        });
+
+
+        final Button cancelButton = (Button) getActivity().findViewById(R.id.cancel_button);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(int j = 0; j<nonprofitManager.size; j++) { //reset old percents
+                    int oldPercent = (int)nonprofits.get(j).getOldPercent();
+                    nonprofits.get(j).setPercentDonated(oldPercent);
+                    seekBars[j].setProgress(oldPercent);
+                }
+
+
+                for (int i = 0; i < nonprofitManager.size; i++) {
+                    seekBars[i].setEnabled(false);
+                }
+
+                Button setButton = (Button) getActivity().findViewById(R.id.set_button);
+                Button saveButton = (Button) getActivity().findViewById(R.id.save_button);
+
+                setButton.setVisibility(View.VISIBLE);
+                cancelButton.setVisibility(View.INVISIBLE);
+                saveButton.setVisibility(View.GONE);
+            }
+
+        });
+
+        final Button saveButton = (Button) getActivity().findViewById(R.id.save_button);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for (int i = 0; i < nonprofitManager.size; i++) {
+                    seekBars[i].setEnabled(false);
+                }
+
+                Button cancelButton = (Button) getActivity().findViewById(R.id.cancel_button);
+                Button setButton = (Button) getActivity().findViewById(R.id.set_button);
+
+                setButton.setVisibility(View.VISIBLE);
+                cancelButton.setVisibility(View.INVISIBLE);
+                saveButton.setVisibility(View.GONE);
+            }
+        });
+
+
+
+
+
 
         //fill the empty boxes with an add option: listen for user to add nonprofit
         for(int i=nonprofitManager.size; i<MAX; i++) {

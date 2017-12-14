@@ -20,7 +20,7 @@ public class AuthenticateFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
         Button signin = (Button) getActivity().findViewById(R.id.signin_button);
         Button register = (Button) getActivity().findViewById(R.id.new_account_button);
 
@@ -39,6 +39,9 @@ public class AuthenticateFragment extends Fragment {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //start a register session
+                
+
                 Fragment fragment = new RegisterFragment();
                 // Insert the fragment by replacing any existing fragment
                 FragmentManager fragmentManager = getFragmentManager();

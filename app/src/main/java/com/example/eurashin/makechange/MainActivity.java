@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                     case 0: fragment = new SliderFragment();
                         tag = "slider";
                         break;
-                    case 1: fragment = new PartnerDetailFragment();
-                        tag = "partner";
+                    case 1: fragment = new UserFragment();
+                        tag = "user";
                         break;
                     case 2: fragment = new SettingsFragment();
                         tag = "settings";

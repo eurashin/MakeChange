@@ -23,7 +23,7 @@ public class SigninFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
         Button next = (Button)getActivity().findViewById(R.id.signin_next);
 
         next.setOnClickListener(new View.OnClickListener() {

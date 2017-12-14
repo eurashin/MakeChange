@@ -22,7 +22,7 @@ public class RegisterFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);
         Button next = (Button)getActivity().findViewById(R.id.register_next);
 
         next.setOnClickListener(new View.OnClickListener() {

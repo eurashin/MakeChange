@@ -12,11 +12,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1"></LinearLayout>
+        android:layout_weight="0.15">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:text="Collected this week: "
+                android:gravity="bottom"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.6"
+                style="@style/TextAppearance.AppCompat.Display2"
+                android:text="$15.6"
+                />
+        </LinearLayout>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:id="@+id/cancel_button"
+            android:text="cancel"
+            android:visibility="invisible"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:id="@+id/set_button"
+            android:text="set"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.25"
+            android:id="@+id/save_button"
+            android:text="save"
+            android:visibility="gone"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
+        android:layout_weight="0.85"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,13 +132,13 @@
                     android:padding="0dp"
                     style="@style/Widget.AppCompat.Button.Borderless" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/sliderBox2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:layout_weight="0.6">
-            </LinearLayout>
+                android:layout_weight="0.6"
+                android:orientation="horizontal"></LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -208,9 +254,5 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        ></LinearLayout>
+
 </LinearLayout>
